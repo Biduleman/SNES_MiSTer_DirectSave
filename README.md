@@ -2,8 +2,17 @@
 
 Written by [srg320](https://github.com/srg320)
 
+
+## !!!WARNING!!!
+This version of the core has the OSD check disabled for saving. If AUTOSAVE is turned ON, anytime the SRAM is written to the save will also be written to the SD card with **no confirmation from the user**.
+
+This is highly experimental, I am not responsible for any MiSTer installation rendered inoperable, any lost files or any broken SD cards.
+
+**INSTALL AT YOUR OWN RISK**
+
+
 ## Installing
-copy \*.rbf to root of SD card. Put some ROMs (\*.SFC, \*.SMC, \*.BIN) into SNES folder
+copy `SNES_20251208.rbf` to root of SD card. Put some ROMs (\*.SFC, \*.SMC, \*.BIN) into SNES folder
 
 ## Features
 * Cycle accurate SNES replica.
@@ -15,6 +24,7 @@ copy \*.rbf to root of SD card. Put some ROMs (\*.SFC, \*.SMC, \*.BIN) into SNES
 * Supports mouse.
 * Light gun support via Wiimote, mouse or analog stick.
 * [SuperFX Turbo and CPU Turbo.](https://github.com/MiSTer-devel/SNES_MiSTer/blob/master/SNES_Turbo.md)
+* 
 
 ### BSX BIOS
 Place bsx_bios.rom in game's folder.

@@ -1223,7 +1223,7 @@ always @(posedge clk_sys) begin
 end
 
 wire bk_load    = status[12];
-wire bk_save    = status[13] | (bk_pending & OSD_STATUS && status[23]);
+wire bk_save    = status[13] | (bk_pending & status[23]);
 reg  bk_loading = 0;
 reg  bk_state   = 0;
 wire [31:0] sd_lba_end = rom_type[7:4] == 4'h2 && rom_type[3] ? {ram_mask[23:9],1'b1} : ram_mask[23:9];//For Sufami with B cart, it's double size
