@@ -4,7 +4,7 @@ Written by [srg320](https://github.com/srg320)
 
 
 ## !!!WARNING!!!
-This version of the core has the OSD check disabled for saving. If AUTOSAVE is turned ON, anytime the SRAM is written to the save will also be written to the SD card with **no confirmation from the user**.
+This version of the core has the OSD check disabled for saving. If AUTOSAVE is turned ON, anytime the SRAM is written to, it will also be written to the SD card with **no confirmation from the user**.
 
 This is highly experimental, I am not responsible for any MiSTer installation rendered inoperable, any lost files or any broken SD cards.
 
