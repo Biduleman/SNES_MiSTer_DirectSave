@@ -12,7 +12,7 @@ This is highly experimental, I am not responsible for any MiSTer installation re
 
 
 ## Installing
-copy `SNES_20251208.rbf` to root of SD card. Put some ROMs (\*.SFC, \*.SMC, \*.BIN) into SNES folder
+copy `SNES_20251209.rbf` to root of SD card. Put some ROMs (\*.SFC, \*.SMC, \*.BIN) into SNES folder
 
 ## Features
 * Cycle accurate SNES replica.
