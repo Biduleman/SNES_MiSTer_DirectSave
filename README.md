@@ -24,7 +24,7 @@ copy `SNES_20251208.rbf` to root of SD card. Put some ROMs (\*.SFC, \*.SMC, \*.B
 * Supports mouse.
 * Light gun support via Wiimote, mouse or analog stick.
 * [SuperFX Turbo and CPU Turbo.](https://github.com/MiSTer-devel/SNES_MiSTer/blob/master/SNES_Turbo.md)
-* 
+* Autosave works without opening the OSD.
 
 ### BSX BIOS
 Place bsx_bios.rom in game's folder.
