@@ -1223,9 +1223,10 @@ always @(posedge clk_sys) begin
 end
 
 wire bk_load    = status[12];
-wire bk_save    = status[13] | (bk_pending & OSD_STATUS && status[23]);
+wire bk_save    = status[13] | (bk_pending & bk_load_done & ~bk_state & status[23]);
 reg  bk_loading = 0;
 reg  bk_state   = 0;
+reg  bk_load_done = 0;  // Flag to track if save has been loaded from SD
 wire [31:0] sd_lba_end = rom_type[7:4] == 4'h2 && rom_type[3] ? {ram_mask[23:9],1'b1} : ram_mask[23:9];//For Sufami with B cart, it's double size
 always @(posedge clk_sys) begin
 	reg old_load = 0, old_save = 0, old_ack;
@@ -1233,6 +1234,9 @@ always @(posedge clk_sys) begin
 	old_load <= bk_load & bk_ena;
 	old_save <= bk_save & bk_ena;
 	old_ack  <= sd_ack;
+
+	// Reset load_done flag when new cart starts loading
+	if(~old_downloading & cart_download) bk_load_done <= 0;
 
 	if(~old_ack & sd_ack) {sd_rd, sd_wr} <= 0;
 
@@ -1254,6 +1258,7 @@ always @(posedge clk_sys) begin
 	end else begin
 		if(old_ack & ~sd_ack) begin
 			if(sd_lba >= sd_lba_end) begin
+				if(bk_loading) bk_load_done <= 1;  // Mark load complete
 				bk_loading <= 0;
 				bk_state <= 0;
 			end else begin
